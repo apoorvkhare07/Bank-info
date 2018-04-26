@@ -9,11 +9,11 @@ def bank(request):
 		name =request.POST['name']
 		city =request.POST['city']
 
-		#bank_name = Banks.objects.get( name=name )
-		#b_id = bank_name.id
-		#bank_details = Branches.objects.filter(bank=b_id, city=city)
-		return render(request,'bank_info.html', { 'bank_details' : {} })
-		#return render(request,'bank_info.html', { 'bank_details' : bank_details , 'bank_name' : bank_name })
+		bank_name = Banks.objects.get( name=name )
+		b_id = bank_name.id
+		bank_details = Branches.objects.filter(bank=b_id, city=city)
+		#return render(request,'bank_info.html', { 'bank_details' : {} })
+		return render(request,'bank_info.html', { 'bank_details' : bank_details , 'bank_name' : bank_name })
 
 	return render (request, 'bank.html',)
 
