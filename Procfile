@@ -1,2 +1,2 @@
-web: gunicorn patient_info.wsgi --log-file -
+web: gunicorn project.wsgi --log-file -
 
